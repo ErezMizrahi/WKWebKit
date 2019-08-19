@@ -60,12 +60,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        slideIn.isMenuOpen = true
+        slideIn.isMenuOpen = false
         return slideIn
     }
 
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        slideIn.isMenuOpen = false
+        slideIn.isMenuOpen = true
         return slideIn
     }
 }
