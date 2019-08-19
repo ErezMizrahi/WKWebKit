@@ -38,7 +38,7 @@ class ViewController: UIViewController {
             
         }
         
-        menu.modalPresentationStyle = .currentContext
+        menu.modalPresentationStyle = .overCurrentContext
         menu.transitioningDelegate = self
         self.present(menu, animated: true)
     }

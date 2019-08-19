@@ -13,6 +13,7 @@ class SlideInAnimation : NSObject, UIViewControllerAnimatedTransitioning {
     //flag
     var isMenuOpen: Bool = false
     
+    let dimView = UIView()
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
@@ -29,6 +30,11 @@ class SlideInAnimation : NSObject, UIViewControllerAnimatedTransitioning {
         let finalHeight = toController.view.bounds.height
         
         if isMenuOpen {
+            dimView.backgroundColor = .black
+            dimView.alpha = 0.0
+            containerView.addSubview(dimView)
+            dimView.frame = containerView.bounds
+            // Add menu view controller to container
             containerView.addSubview(toController.view)
             
             // put the frame off the screen
@@ -36,12 +42,14 @@ class SlideInAnimation : NSObject, UIViewControllerAnimatedTransitioning {
         }
         // Move on screen
         let transform = {
+            self.dimView.alpha = 0.5
             toController.view.transform = CGAffineTransform(translationX: finalWidth, y: 0)
         }
         
         
         // Move back off screen
         let identity = {
+            self.dimView.alpha = 0.0
             fromController.view.transform = .identity
         }
         
