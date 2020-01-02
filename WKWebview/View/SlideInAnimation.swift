@@ -2,7 +2,7 @@
 //  SlideInAnimation.swift
 //  WKWebview
 //
-//  Created by hackeru on 19/08/2019.
+//  Created by erez8 on 19/08/2019.
 //  Copyright © 2019 erez8. All rights reserved.
 //
 
